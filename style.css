@@ -1,5 +1,5 @@
 body {
-    margin: 1em;
+    /*margin: 1em;*/
 }
 
 table {
@@ -10,4 +10,14 @@ table {
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
+}
+
+b{
+    color: black;
+    /*font-size: 1em;*/
+}
+
+p{
+    color: gray;
+    /*font-size: .5em;*/
 }
