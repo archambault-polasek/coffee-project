@@ -1,4 +1,7 @@
-
+body {
+    background-image: url("coffee-beans-in-mug-1419931.jpg");
+    background-size: cover;
+}
 
 b{
     color: black;
@@ -8,4 +11,8 @@ b{
 p{
     color: gray;
     /*font-size: .5em;*/
+}
+
+#coffees{
+    background-color: cornsilk;
 }
