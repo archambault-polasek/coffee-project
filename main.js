@@ -1,12 +1,12 @@
 "use strict";
 
 //taking array input from 'rendered coffees' and organizing it
-    function renderCoffee(coffee) {
-        var html = '<div class="coffee">';
-        html += '<p>' + '<b>' + coffee.name + '</b>' + ' ' + coffee.roast + '</p>';
-            // html += '<p>' + coffee.roast + '</p>';
-        html += '</div>';
-        return html;
+function renderCoffee(coffee) {
+    var html = '<div class="coffee">';
+    html += '<p>' + '<b>' + coffee.name + '</b>' + ' ' + coffee.roast + '</p>';
+        // html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
+    return html;
 }
 //taking data from coffee array and giving it to 'rendered coffee'
 function renderCoffees(coffees) {
@@ -50,11 +50,32 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+function addUsersCoffee(e){
+    e.preventDefault();
+    var userValue = document.getElementById('user-addCoffee').value;
+    var userInputRoast = roastSelection2.value;
+    var id = coffees.length - 1;
+    coffees.forEach(function(coffee){
+        if(userValue !== coffee.name) {
+           var newCoffee = {
+                id: id,
+                name: userValue,
+                roast: userInputRoast
+            };
+            coffees.push(newCoffee);
+            updateCoffees();
+        }
+    });
+}
 
-var coffeeListBody = document.querySelector('#coffees'); // creating tbody variable
+
+var coffeeListBody = document.querySelector('#coffees');
 var roastSelection = document.querySelector('#roast-selection');
-
 var userSearch = document.querySelector('#user-search');
+var roastSelection2 = document.querySelector('#roast-selection2');
+
+var submitButton = document.querySelector('#submit');
+submitButton.addEventListener('click', addUsersCoffee);
 
 coffeeListBody.innerHTML = renderCoffees(coffees); //displaying the output from the 'rendered coffee & rendered coffees' functions to html table
 
