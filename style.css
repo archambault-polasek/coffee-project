@@ -1,3 +1,7 @@
+body {
+    margin: 1em;
+}
+
 table {
      border-collapse: collapse;
      margin: 15px 0;
