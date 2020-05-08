@@ -3,8 +3,8 @@
 //taking array input from 'rendered coffees' and organizing it
     function renderCoffee(coffee) {
         var html = '<div class="coffee">';
-            html += '<p>' + coffee.name + '</p>';
-            html += '<p>' + coffee.roast + '</p>';
+        html += '<p>' + '<b>' + coffee.name + '</b>' + ' ' + coffee.roast + '</p>';
+            // html += '<p>' + coffee.roast + '</p>';
         html += '</div>';
         return html;
 }
@@ -28,7 +28,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeListBody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 
@@ -51,12 +51,12 @@ var coffees = [
 ];
 
 
-var tbody = document.querySelector('#coffees'); // creating tbody variable
+var coffeeListBody = document.querySelector('#coffees'); // creating tbody variable
 var roastSelection = document.querySelector('#roast-selection');
 
 var userSearch = document.querySelector('#user-search');
 
-tbody.innerHTML = renderCoffees(coffees); //diplaying the output from the 'rendered coffee & rendered coffees' functions to html table
+coffeeListBody.innerHTML = renderCoffees(coffees); //displaying the output from the 'rendered coffee & rendered coffees' functions to html table
 
-roastSelection.addEventListener('mouseover', updateCoffees); //updates user selection list using the top three functions...
+roastSelection.addEventListener('change', updateCoffees); //updates user selection list using the top three functions...
 userSearch.addEventListener('keyup', updateCoffees);
