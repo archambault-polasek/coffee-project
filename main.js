@@ -2,11 +2,10 @@
 
 //taking array input from 'rendered coffees' and organizing it
     function renderCoffee(coffee) {
-        var html = '<tr class="coffee">';
-            // html += '<td>' + coffee.id + '</td>';
-            html += '<td>' + coffee.name + '</td>';
-            html += '<td>' + coffee.roast + '</td>';
-        html += '</tr>';
+        var html = '<div class="coffee">';
+            html += '<p>' + coffee.name + '</p>';
+            html += '<p>' + coffee.roast + '</p>';
+        html += '</div>';
         return html;
 }
 //taking data from coffee array and giving it to 'rendered coffee'
