@@ -1,14 +1,13 @@
 "use strict";
 
-//taking array input from 'rendered coffees' and organizing it
+
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<p>' + '<b>' + coffee.name + '</b>' + ' ' + coffee.roast + '</p>';
-        // html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
     return html;
 }
-//taking data from coffee array and giving it to 'rendered coffee'
+
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -16,12 +15,12 @@ function renderCoffees(coffees) {
     }
     return html;
 }
-//first form
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var userInput = userSearch.value.toLowerCase();
-    var filteredCoffees = []; //create empty array to hold the for each return value
+    var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         var arrayNameLower = coffee.name.toLowerCase();
         if (arrayNameLower.startsWith(userInput)  && coffee.roast === selectedRoast) {
@@ -68,7 +67,6 @@ function addUsersCoffee(e){
     });
 }
 
-
 var coffeeListBody = document.querySelector('#coffees');
 var roastSelection = document.querySelector('#roast-selection');
 var userSearch = document.querySelector('#user-search');
@@ -77,7 +75,7 @@ var roastSelection2 = document.querySelector('#roast-selection2');
 var submitButton = document.querySelector('#submit');
 submitButton.addEventListener('click', addUsersCoffee);
 
-coffeeListBody.innerHTML = renderCoffees(coffees); //displaying the output from the 'rendered coffee & rendered coffees' functions to html table
+coffeeListBody.innerHTML = renderCoffees(coffees);
 
-roastSelection.addEventListener('change', updateCoffees); //updates user selection list using the top three functions...
+roastSelection.addEventListener('change', updateCoffees);
 userSearch.addEventListener('keyup', updateCoffees);
